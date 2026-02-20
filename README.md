@@ -54,7 +54,8 @@ Il aurait été aussi possible de compter en centipions au lieu du nombre de pi�
 
 Enfin le plus important la fonction en elle meme.
 - Après avoir regarder plusieurs vidéos pour comprendre le concept mathématiques du minimax j'ai décider de coder la fonction meme si celle ci était souvent representé dans les vidéos.
-- Pour les explications, je vous donne le lien de la vidéo qui m'a permis de mieux comprendre. Link : https://youtu.be/l-hh51ncgDI?si=IizlpFgzucJQLukf 
+- Pour les explications, je vous donne le lien de la vidéo qui m'a permis de mieux comprendre. 
+- Link : https://youtu.be/l-hh51ncgDI?si=IizlpFgzucJQLukf 
 Si vous ne voulez pas regarder j'explique la fonction ici :
 - L'algorithme met en place deux agents dans notre cas les noirs et les blancs. La fonction explore récursivement l'arbre de toutes les parties possibles jusqu'à une certaine profondeur. Le joueur "Blanc" cherche à maximiser son score, tandis que "Noir" (l'adversaire) cherche à le minimiser. À chaque nœud, on alterne entre choisir le meilleur coup (max) et le pire pour nous (min).Quand on atteint la profondeur limite, une fonction d'évaluation attribue un score à la position, et ces scores remontent dans l'arbre pour déterminer le meilleur coup à jouer.
 
