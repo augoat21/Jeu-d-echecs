@@ -1,6 +1,6 @@
 ## WARNING !
-Download Stockfish from https://stockfishchess.org/download/
-Then update CHEMIN_STOCKFISH variable in config.py with your own Stockfish file path.
+- Download Stockfish from https://stockfishchess.org/download/
+- Then update CHEMIN_STOCKFISH variable in config.py with your own Stockfish file path.
 
 # Que fait mon projet ? 
 Il met à disposition un jeu d'échecs éducatif permettant de s'entraîner/s'amuser. 
