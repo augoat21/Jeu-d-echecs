@@ -13,7 +13,7 @@ class MoteurEchecs:
         self.connecter()
 
     def connecter(self):
-        """Connecter au moteur Stockfish."""
+        """Connecter au moteur Stockfish"""
         try:
             self.moteur = chess.engine.SimpleEngine.popen_uci(CHEMIN_STOCKFISH)
             self.moteur.configure({"Skill Level": self.niveau_competence})
@@ -31,12 +31,7 @@ class MoteurEchecs:
             self.moteur.configure({"Skill Level": niveau_competence})
 
     def obtenir_meilleur_coup(self, plateau):
-        """
-        Obtenir le meilleur coup et l'analyse pour la position courante.
-
-        Retourne:
-            tuple: (meilleur_coup, dictionnaire_analyse)
-        """
+        """Obtenir le meilleur coup et l'analyse pour la position courante"""
         if not self.moteur:
             return self._coup_secours(plateau), {}
 
@@ -68,7 +63,7 @@ class MoteurEchecs:
             return self._coup_secours(plateau), {}
 
     def _formater_score(self, score):
-        """Formater le score du moteur pour l'affichage."""
+        """Formater le score du moteur pour l'affichage"""
         if score is None:
             return "?"
 
@@ -89,7 +84,7 @@ class MoteurEchecs:
         return "?"
 
     def _obtenir_valeur_score(self, score):
-        """Obtenir la valeur numerique du score en centipions."""
+        """Obtenir la valeur numerique du score en centipions"""
         if score is None:
             return 0
         if score.is_mate():
@@ -148,7 +143,7 @@ class MoteurEchecs:
         return analyse
 
     def _analyser_tactiques(self, plateau, coup):
-        """Detecter les motifs tactiques dans le coup."""
+        """Detecter les motifs tactiques dans le coup"""
         tactiques = {
             "est_fourchette": False,
             "est_clouage": False,
@@ -193,7 +188,7 @@ class MoteurEchecs:
         return tactiques
 
     def _coup_secours(self, plateau):
-        """Retourner un coup legal aleatoire quand le moteur est indisponible."""
+        """Retourner un coup legal aleatoire quand le moteur est indisponible"""
         coups_legaux = list(plateau.legal_moves)
         if coups_legaux:
             import random
@@ -201,7 +196,7 @@ class MoteurEchecs:
         return None
 
     def obtenir_evaluation(self, plateau):
-        """Obtenir l'evaluation de la position sans jouer de coup."""
+        """Obtenir l'evaluation de la position sans jouer de coup"""
         if not self.moteur:
             return {"score": "?", "valeur_score": 0}
 
@@ -215,11 +210,11 @@ class MoteurEchecs:
             return {"score": "?", "valeur_score": 0}
 
     def reinitialiser(self):
-        """Reinitialiser l'etat du moteur."""
+        """Reinitialiser l'etat du moteur"""
         pass  # Stockfish n'a pas besoin de reinitialisation explicite
 
     def quitter(self):
-        """Liberer les ressources du moteur."""
+        """Liberer les ressources du moteur"""
         if self.moteur:
             self.moteur.quit()
             self.moteur = None
